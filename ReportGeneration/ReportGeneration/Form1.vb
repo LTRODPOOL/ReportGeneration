@@ -47,4 +47,14 @@ Public Class PrincipalReports
 
     End Function
 
+    Private Sub cmbReportType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbReportType.SelectedIndexChanged
+        Select Case cmbReportType.GetItemText
+            Case "Yearly"
+            Case "Monthly"
+            Case "Weekly"
+            Case "Daily"
+            Case Else
+                MessageBox.Show("Item selecionado é invalido.")
+        End Select
+    End Sub
 End Class
