@@ -48,8 +48,9 @@ Public Class PrincipalReports
     End Function
 
     Private Sub cmbReportType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbReportType.SelectedIndexChanged
-        Select Case cmbReportType.GetItemText
-            Case "Yearly"
+        Stop
+        Select Case cmbReportType.Text(0)
+            Case "Annualy"
             Case "Monthly"
             Case "Weekly"
             Case "Daily"
