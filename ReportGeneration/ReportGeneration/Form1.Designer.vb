@@ -59,6 +59,8 @@ Partial Class PrincipalReports
         Me.objFolderBrowserDialogKPMS = New System.Windows.Forms.FolderBrowserDialog()
         Me.objOpenFileDialogRemedy = New System.Windows.Forms.OpenFileDialog()
         Me.objFolderBrowserDialogRemedy = New System.Windows.Forms.FolderBrowserDialog()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.DT_DailyReport = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         Me.Actions.SuspendLayout()
         Me.gpLOG.SuspendLayout()
@@ -71,18 +73,18 @@ Partial Class PrincipalReports
         Me.GroupBox1.Controls.Add(Me.lblRemedyReport)
         Me.GroupBox1.Controls.Add(Me.lblSelectionKPMS)
         Me.GroupBox1.Location = New System.Drawing.Point(17, 16)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(533, 85)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Size = New System.Drawing.Size(611, 85)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Report Selection"
         '
         'btRemedyfileimport
         '
-        Me.btRemedyfileimport.Location = New System.Drawing.Point(326, 51)
-        Me.btRemedyfileimport.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btRemedyfileimport.Location = New System.Drawing.Point(413, 51)
+        Me.btRemedyfileimport.Margin = New System.Windows.Forms.Padding(2)
         Me.btRemedyfileimport.Name = "btRemedyfileimport"
         Me.btRemedyfileimport.Size = New System.Drawing.Size(181, 23)
         Me.btRemedyfileimport.TabIndex = 3
@@ -91,8 +93,8 @@ Partial Class PrincipalReports
         '
         'btKPMSfileImport
         '
-        Me.btKPMSfileImport.Location = New System.Drawing.Point(326, 10)
-        Me.btKPMSfileImport.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btKPMSfileImport.Location = New System.Drawing.Point(413, 9)
+        Me.btKPMSfileImport.Margin = New System.Windows.Forms.Padding(2)
         Me.btKPMSfileImport.Name = "btKPMSfileImport"
         Me.btKPMSfileImport.Size = New System.Drawing.Size(181, 25)
         Me.btKPMSfileImport.TabIndex = 2
@@ -121,6 +123,8 @@ Partial Class PrincipalReports
         '
         'Actions
         '
+        Me.Actions.Controls.Add(Me.DT_DailyReport)
+        Me.Actions.Controls.Add(Me.Label6)
         Me.Actions.Controls.Add(Me.cmbReportFrom)
         Me.Actions.Controls.Add(Me.Label5)
         Me.Actions.Controls.Add(Me.cmbYear)
@@ -134,10 +138,10 @@ Partial Class PrincipalReports
         Me.Actions.Controls.Add(Me.cmbReportType)
         Me.Actions.Controls.Add(Me.gpLOG)
         Me.Actions.Location = New System.Drawing.Point(17, 116)
-        Me.Actions.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Actions.Margin = New System.Windows.Forms.Padding(2)
         Me.Actions.Name = "Actions"
-        Me.Actions.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Actions.Size = New System.Drawing.Size(533, 272)
+        Me.Actions.Padding = New System.Windows.Forms.Padding(2)
+        Me.Actions.Size = New System.Drawing.Size(611, 283)
         Me.Actions.TabIndex = 1
         Me.Actions.TabStop = False
         Me.Actions.Text = "Actions"
@@ -147,9 +151,9 @@ Partial Class PrincipalReports
         Me.cmbReportFrom.FormattingEnabled = True
         Me.cmbReportFrom.Items.AddRange(New Object() {"KPMS", "Remedy", "Merge"})
         Me.cmbReportFrom.Location = New System.Drawing.Point(4, 32)
-        Me.cmbReportFrom.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbReportFrom.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbReportFrom.Name = "cmbReportFrom"
-        Me.cmbReportFrom.Size = New System.Drawing.Size(118, 21)
+        Me.cmbReportFrom.Size = New System.Drawing.Size(200, 21)
         Me.cmbReportFrom.TabIndex = 11
         '
         'Label5
@@ -166,9 +170,9 @@ Partial Class PrincipalReports
         '
         Me.cmbYear.FormattingEnabled = True
         Me.cmbYear.Location = New System.Drawing.Point(4, 107)
-        Me.cmbYear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbYear.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbYear.Name = "cmbYear"
-        Me.cmbYear.Size = New System.Drawing.Size(118, 21)
+        Me.cmbYear.Size = New System.Drawing.Size(200, 21)
         Me.cmbYear.TabIndex = 9
         '
         'Label4
@@ -183,8 +187,8 @@ Partial Class PrincipalReports
         '
         'btGenerate
         '
-        Me.btGenerate.Location = New System.Drawing.Point(9, 244)
-        Me.btGenerate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btGenerate.Location = New System.Drawing.Point(93, 256)
+        Me.btGenerate.Margin = New System.Windows.Forms.Padding(2)
         Me.btGenerate.Name = "btGenerate"
         Me.btGenerate.Size = New System.Drawing.Size(111, 23)
         Me.btGenerate.TabIndex = 7
@@ -195,16 +199,16 @@ Partial Class PrincipalReports
         '
         Me.cmbWeek.FormattingEnabled = True
         Me.cmbWeek.Items.AddRange(New Object() {"WK1", "WK2", "WK3", "WK4", "WK5"})
-        Me.cmbWeek.Location = New System.Drawing.Point(4, 196)
-        Me.cmbWeek.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbWeek.Location = New System.Drawing.Point(4, 186)
+        Me.cmbWeek.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbWeek.Name = "cmbWeek"
-        Me.cmbWeek.Size = New System.Drawing.Size(118, 21)
+        Me.cmbWeek.Size = New System.Drawing.Size(200, 21)
         Me.cmbWeek.TabIndex = 6
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(3, 181)
+        Me.Label3.Location = New System.Drawing.Point(3, 171)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 13)
@@ -215,16 +219,16 @@ Partial Class PrincipalReports
         '
         Me.cmbMonth.FormattingEnabled = True
         Me.cmbMonth.Items.AddRange(New Object() {"1 - January", "2 - February", "3 - March", "4 - April", "5 - May", "6 - June", "7 - July", "8 - August", "9 - Sepetember", "10 - October", "11 - November", "12 - December"})
-        Me.cmbMonth.Location = New System.Drawing.Point(4, 153)
-        Me.cmbMonth.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbMonth.Location = New System.Drawing.Point(4, 146)
+        Me.cmbMonth.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbMonth.Name = "cmbMonth"
-        Me.cmbMonth.Size = New System.Drawing.Size(116, 21)
+        Me.cmbMonth.Size = New System.Drawing.Size(200, 21)
         Me.cmbMonth.TabIndex = 4
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(7, 138)
+        Me.Label2.Location = New System.Drawing.Point(4, 131)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 13)
@@ -246,19 +250,19 @@ Partial Class PrincipalReports
         Me.cmbReportType.FormattingEnabled = True
         Me.cmbReportType.Items.AddRange(New Object() {"Daily", "Weekly", "Monthly", "Annualy"})
         Me.cmbReportType.Location = New System.Drawing.Point(4, 67)
-        Me.cmbReportType.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbReportType.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbReportType.Name = "cmbReportType"
-        Me.cmbReportType.Size = New System.Drawing.Size(118, 21)
+        Me.cmbReportType.Size = New System.Drawing.Size(200, 21)
         Me.cmbReportType.TabIndex = 1
         '
         'gpLOG
         '
         Me.gpLOG.Controls.Add(Me.txtLOG)
-        Me.gpLOG.Location = New System.Drawing.Point(133, 16)
-        Me.gpLOG.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gpLOG.Location = New System.Drawing.Point(226, 16)
+        Me.gpLOG.Margin = New System.Windows.Forms.Padding(2)
         Me.gpLOG.Name = "gpLOG"
-        Me.gpLOG.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.gpLOG.Size = New System.Drawing.Size(387, 252)
+        Me.gpLOG.Padding = New System.Windows.Forms.Padding(2)
+        Me.gpLOG.Size = New System.Drawing.Size(381, 263)
         Me.gpLOG.TabIndex = 0
         Me.gpLOG.TabStop = False
         Me.gpLOG.Text = "LOG"
@@ -266,12 +270,12 @@ Partial Class PrincipalReports
         'txtLOG
         '
         Me.txtLOG.Enabled = False
-        Me.txtLOG.Location = New System.Drawing.Point(11, 15)
-        Me.txtLOG.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtLOG.Location = New System.Drawing.Point(9, 17)
+        Me.txtLOG.Margin = New System.Windows.Forms.Padding(2)
         Me.txtLOG.Multiline = True
         Me.txtLOG.Name = "txtLOG"
         Me.txtLOG.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtLOG.Size = New System.Drawing.Size(365, 228)
+        Me.txtLOG.Size = New System.Drawing.Size(359, 234)
         Me.txtLOG.TabIndex = 0
         '
         'objOpenFileDialogKPMS
@@ -285,14 +289,30 @@ Partial Class PrincipalReports
         Me.objFolderBrowserDialogKPMS.RootFolder = System.Environment.SpecialFolder.MyDocuments
         Me.objFolderBrowserDialogKPMS.ShowNewFolderButton = False
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(1, 209)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(30, 13)
+        Me.Label6.TabIndex = 2
+        Me.Label6.Text = "Date"
+        '
+        'DT_DailyReport
+        '
+        Me.DT_DailyReport.Location = New System.Drawing.Point(4, 225)
+        Me.DT_DailyReport.Name = "DT_DailyReport"
+        Me.DT_DailyReport.Size = New System.Drawing.Size(200, 20)
+        Me.DT_DailyReport.TabIndex = 2
+        '
         'PrincipalReports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(571, 410)
+        Me.ClientSize = New System.Drawing.Size(636, 410)
         Me.Controls.Add(Me.Actions)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "PrincipalReports"
         Me.Text = "Reports Generation"
         Me.GroupBox1.ResumeLayout(False)
@@ -352,4 +372,6 @@ Partial Class PrincipalReports
     Friend WithEvents Label4 As Label
     Friend WithEvents cmbReportFrom As ComboBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents DT_DailyReport As DateTimePicker
+    Friend WithEvents Label6 As Label
 End Class

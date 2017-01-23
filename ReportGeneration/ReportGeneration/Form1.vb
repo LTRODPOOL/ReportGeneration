@@ -3,8 +3,7 @@
 Public Class PrincipalReports
 
     Private Sub btKPMSfileImport_Click(sender As Object, e As EventArgs) Handles btKPMSfileImport.Click
-        '     Dim objOpenFileSelection As New FileSelection
-        ' Dim strRetorno As String
+
         Dim returnDialog As DialogResult = Me.objOpenFileDialogKPMS.ShowDialog()
 
         Me.txtLOG = objLog.insertLineinLog(Me.txtLOG, "Inicio do Processamento")
@@ -13,7 +12,6 @@ Public Class PrincipalReports
 
             Me.txtLOG = objLog.insertLineinLog(Me.txtLOG, "Abrindo Arquivo - " + CStr(Me.objOpenFileDialogKPMS.FileName))
             MessageBox.Show(Me.objOpenFileDialogKPMS.FileName)
-
 
         End If
 
@@ -24,7 +22,7 @@ Public Class PrincipalReports
     End Sub
 
     Private Sub btGenerate_Click(sender As Object, e As EventArgs) Handles btGenerate.Click
-        If VerificarPreenchimentoPathFile() Then
+        If VerificarPreenchimentoPathFile(cmbReportFrom.Text(0)) Then
 
             If objExcelProcess Is Nothing Then objExcelProcess = New ExcelOperator
 
@@ -33,16 +31,14 @@ Public Class PrincipalReports
         End If
     End Sub
 
-    Function VerificarPreenchimentoPathFile() As Double
+    Function VerificarPreenchimentoPathFile(strFilter As String) As Double
 
-        If Me.objOpenFileDialogKPMS.FileName <> "" Then Return True
-
-    End Function
-
-
-
-    Function IdentifyOperation()
-
+        Select Case strFilter
+            Case "KPMS"
+                If Me.objOpenFileDialogKPMS.FileName <> "" Then Return True
+            Case "Remedy"
+                If Me.objOpenFileDialogRemedy.FileName <> "" Then Return True
+        End Select
 
 
     End Function
@@ -51,11 +47,33 @@ Public Class PrincipalReports
         Stop
         Select Case cmbReportType.Text(0)
             Case "Annualy"
+                Me.cmbMonth.Enabled = False
+                Me.cmbWeek.Enabled = False
+                Me.DT_DailyReport.Enabled = False
             Case "Monthly"
+                Me.cmbMonth.Enabled = True
+                Me.cmbWeek.Enabled = False
+                Me.DT_DailyReport.Enabled = False
             Case "Weekly"
+                Me.cmbMonth.Enabled = True
+                Me.cmbWeek.Enabled = True
+                Me.DT_DailyReport.Enabled = False
             Case "Daily"
+                Me.cmbMonth.Enabled = True
+                Me.cmbWeek.Enabled = True
+                Me.DT_DailyReport.Enabled = True
             Case Else
                 MessageBox.Show("Item selecionado é invalido.")
+        End Select
+    End Sub
+
+    Private Sub cmbReportFrom_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbReportFrom.SelectedIndexChanged
+        Select Case cmbReportFrom.Text(0)
+            Case "KPMS"
+                If Not VerificarPreenchimentoPathFile(cmbReportFrom.Text(0)) Then MessageBox.Show("The file path of KPMS report is Manadatory, please informt it on the button KPMS")
+            Case "Remedy"
+                If Not VerificarPreenchimentoPathFile(cmbReportFrom.Text(0)) Then MessageBox.Show("The file path of Remedy report is Manadatory, please informt it on the button Remedy")
+            Case Else
         End Select
     End Sub
 End Class
