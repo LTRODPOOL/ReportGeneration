@@ -25,6 +25,8 @@ Public Class ExcelOperator
             Me.objWorkbook = Me.objWorkBooks.Open(strPathFile)
             Me.objWorkSheet = Me.objWorkbook.Sheets(1)
 
+
+
         Catch exc As Exception
             Console.WriteLine("ocorreu um erro " & exc.GetBaseException.ToString)
             Console.WriteLine("ocorreu um erro " & exc.Message)
@@ -36,30 +38,34 @@ Public Class ExcelOperator
 
     End Sub
 
-    Private Sub PrepareDataToReportAnalises(objFilter As Object, strFilter As String)
+    Sub PrepareDataToReportAnalises(strFilter As String)
 
         Select Case strFilter
             Case "KPMS"
-                Call PrepareDataKPMS(objFilter)
+                Call PrepareDataKPMS()
             Case "Remedy"
-                Call PrepareDataRemedy(objFilter)
+                Call PrepareDataRemedy()
             Case "TimeLog"
-                Call PrepareDataDaily(objFilter)
+                Call PrepareDataDaily()
         End Select
 
     End Sub
 
-    Private Sub PrepareDataKPMS(objFilter As Object)
+    Private Sub PrepareDataKPMS()
 
-        Me.objWorkbook.Activate()
+        Dim objRange As Range
+        Dim objSelection As Object
+
+        objRange = objWorkSheet.Range("A8")
+        objSelection = objRange.Select()
 
     End Sub
 
-    Private Sub PrepareDataRemedy(objFilter As Object)
+    Private Sub PrepareDataRemedy()
 
     End Sub
 
-    Private Sub PrepareDataDaily(objFilter As Object)
+    Private Sub PrepareDataDaily()
 
     End Sub
 

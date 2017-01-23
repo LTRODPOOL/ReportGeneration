@@ -26,7 +26,14 @@ Public Class PrincipalReports
 
             If objExcelProcess Is Nothing Then objExcelProcess = New ExcelOperator
 
-            Call objExcelProcess.openWorkBook(Me.objOpenFileDialogKPMS.FileName)
+            Select Case cmbReportFrom.Text
+                Case "KPMS"
+                    Call objExcelProcess.openWorkBook(Me.objOpenFileDialogKPMS.FileName)
+                    Call objExcelProcess.PrepareDataToReportAnalises(cmbReportFrom.Text)
+                Case "REMEDY"
+                    Call objExcelProcess.openWorkBook(Me.objOpenFileDialogRemedy.FileName)
+                    Call objExcelProcess.PrepareDataToReportAnalises(cmbReportFrom.Text)
+            End Select
 
         End If
     End Sub
