@@ -22,7 +22,7 @@ Public Class PrincipalReports
     End Sub
 
     Private Sub btGenerate_Click(sender As Object, e As EventArgs) Handles btGenerate.Click
-        If VerificarPreenchimentoPathFile(cmbReportFrom.Text(0)) Then
+        If VerificarPreenchimentoPathFile(cmbReportFrom.Text) Then
 
             If objExcelProcess Is Nothing Then objExcelProcess = New ExcelOperator
 
@@ -45,7 +45,7 @@ Public Class PrincipalReports
 
     Private Sub cmbReportType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbReportType.SelectedIndexChanged
         Stop
-        Select Case cmbReportType.Text(0)
+        Select Case cmbReportType.Text
             Case "Annualy"
                 Me.cmbMonth.Enabled = False
                 Me.cmbWeek.Enabled = False
@@ -68,12 +68,15 @@ Public Class PrincipalReports
     End Sub
 
     Private Sub cmbReportFrom_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbReportFrom.SelectedIndexChanged
-        Select Case cmbReportFrom.Text(0)
+        Select Case UCase(cmbReportFrom.Text)
             Case "KPMS"
-                If Not VerificarPreenchimentoPathFile(cmbReportFrom.Text(0)) Then MessageBox.Show("The file path of KPMS report is Manadatory, please informt it on the button KPMS")
-            Case "Remedy"
-                If Not VerificarPreenchimentoPathFile(cmbReportFrom.Text(0)) Then MessageBox.Show("The file path of Remedy report is Manadatory, please informt it on the button Remedy")
-            Case Else
+                If Not VerificarPreenchimentoPathFile(cmbReportFrom.Text) Then MessageBox.Show("The file path of KPMS report is Manadatory, please fill it on the button KPMS")
+            Case "REMEDY"
+                If Not VerificarPreenchimentoPathFile(cmbReportFrom.Text) Then MessageBox.Show("The file path of Remedy report is Manadatory, please fill it on the button Remedy")
+            Case "MERGE"
+                MessageBox.Show("Opção ainda inativa")
+            Case "BOTH"
+                If Not VerificarPreenchimentoPathFile("KMPS") Or Not VerificarPreenchimentoPathFile("Remedy") Then MessageBox.Show("The file path of Remedy report is Manadatory, please fill it on the button Remedy")
         End Select
     End Sub
 End Class

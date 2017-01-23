@@ -149,7 +149,7 @@ Partial Class PrincipalReports
         'cmbReportFrom
         '
         Me.cmbReportFrom.FormattingEnabled = True
-        Me.cmbReportFrom.Items.AddRange(New Object() {"KPMS", "Remedy", "Merge"})
+        Me.cmbReportFrom.Items.AddRange(New Object() {"KPMS", "REMEDY", "BOTH", "MERGE"})
         Me.cmbReportFrom.Location = New System.Drawing.Point(4, 32)
         Me.cmbReportFrom.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbReportFrom.Name = "cmbReportFrom"

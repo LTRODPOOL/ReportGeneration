@@ -81,6 +81,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="IdentifyOperation.vb" />
+    <Compile Include="KPMS.vb" />
     <Compile Include="LogObject.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -97,6 +98,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Remedy.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
