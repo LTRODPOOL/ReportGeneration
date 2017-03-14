@@ -82,6 +82,7 @@
     </Compile>
     <Compile Include="IdentifyOperation.vb" />
     <Compile Include="KPMS.vb" />
+    <Compile Include="LoadData.vb" />
     <Compile Include="LogObject.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
