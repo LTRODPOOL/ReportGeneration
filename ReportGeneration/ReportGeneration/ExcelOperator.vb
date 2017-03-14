@@ -6,11 +6,11 @@ Public Class ExcelOperator
     Const ProductCategorization_Filter = "Product Categarization Version"
     Const Resolution_Filter = "Resolution"
 
-    Dim objectEXL As Object
-    Dim objExcelApp As Microsoft.Office.Interop.Excel.Application
-    Dim objWorkBooks As Microsoft.Office.Interop.Excel.Workbooks
-    Dim objWorkbook As Microsoft.Office.Interop.Excel.Workbook
-    Dim objWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+    Public objectEXL As Object
+    Public objExcelApp As Microsoft.Office.Interop.Excel.Application
+    Public objWorkBooks As Microsoft.Office.Interop.Excel.Workbooks
+    Public objWorkbook As Microsoft.Office.Interop.Excel.Workbook
+    Public objWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
 
     Sub New()
         If objExcelApp Is Nothing Then objExcelApp = New Microsoft.Office.Interop.Excel.Application

@@ -42,6 +42,8 @@ Partial Class PrincipalReports
         Me.lblRemedyReport = New System.Windows.Forms.Label()
         Me.lblSelectionKPMS = New System.Windows.Forms.Label()
         Me.Actions = New System.Windows.Forms.GroupBox()
+        Me.DT_DailyReport = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.cmbReportFrom = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cmbYear = New System.Windows.Forms.ComboBox()
@@ -59,8 +61,6 @@ Partial Class PrincipalReports
         Me.objFolderBrowserDialogKPMS = New System.Windows.Forms.FolderBrowserDialog()
         Me.objOpenFileDialogRemedy = New System.Windows.Forms.OpenFileDialog()
         Me.objFolderBrowserDialogRemedy = New System.Windows.Forms.FolderBrowserDialog()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.DT_DailyReport = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         Me.Actions.SuspendLayout()
         Me.gpLOG.SuspendLayout()
@@ -146,6 +146,22 @@ Partial Class PrincipalReports
         Me.Actions.TabStop = False
         Me.Actions.Text = "Actions"
         '
+        'DT_DailyReport
+        '
+        Me.DT_DailyReport.Location = New System.Drawing.Point(4, 225)
+        Me.DT_DailyReport.Name = "DT_DailyReport"
+        Me.DT_DailyReport.Size = New System.Drawing.Size(200, 20)
+        Me.DT_DailyReport.TabIndex = 2
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(1, 209)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(30, 13)
+        Me.Label6.TabIndex = 2
+        Me.Label6.Text = "Date"
+        '
         'cmbReportFrom
         '
         Me.cmbReportFrom.FormattingEnabled = True
@@ -187,10 +203,10 @@ Partial Class PrincipalReports
         '
         'btGenerate
         '
-        Me.btGenerate.Location = New System.Drawing.Point(93, 256)
+        Me.btGenerate.Location = New System.Drawing.Point(95, 256)
         Me.btGenerate.Margin = New System.Windows.Forms.Padding(2)
         Me.btGenerate.Name = "btGenerate"
-        Me.btGenerate.Size = New System.Drawing.Size(111, 23)
+        Me.btGenerate.Size = New System.Drawing.Size(109, 23)
         Me.btGenerate.TabIndex = 7
         Me.btGenerate.Text = "Generate"
         Me.btGenerate.UseVisualStyleBackColor = True
@@ -289,22 +305,6 @@ Partial Class PrincipalReports
         Me.objFolderBrowserDialogKPMS.RootFolder = System.Environment.SpecialFolder.MyDocuments
         Me.objFolderBrowserDialogKPMS.ShowNewFolderButton = False
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(1, 209)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(30, 13)
-        Me.Label6.TabIndex = 2
-        Me.Label6.Text = "Date"
-        '
-        'DT_DailyReport
-        '
-        Me.DT_DailyReport.Location = New System.Drawing.Point(4, 225)
-        Me.DT_DailyReport.Name = "DT_DailyReport"
-        Me.DT_DailyReport.Size = New System.Drawing.Size(200, 20)
-        Me.DT_DailyReport.TabIndex = 2
-        '
         'PrincipalReports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -313,7 +313,10 @@ Partial Class PrincipalReports
         Me.Controls.Add(Me.Actions)
         Me.Controls.Add(Me.GroupBox1)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximumSize = New System.Drawing.Size(652, 449)
+        Me.MinimumSize = New System.Drawing.Size(652, 449)
         Me.Name = "PrincipalReports"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reports Generation"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

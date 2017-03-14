@@ -2,6 +2,9 @@
 
 Public Class PrincipalReports
 
+    Private CollectionKPMSLines As List(Of KPMS)
+
+
     Private Sub btKPMSfileImport_Click(sender As Object, e As EventArgs) Handles btKPMSfileImport.Click
 
         Dim returnDialog As DialogResult = Me.objOpenFileDialogKPMS.ShowDialog()
@@ -22,6 +25,7 @@ Public Class PrincipalReports
     End Sub
 
     Private Sub btGenerate_Click(sender As Object, e As EventArgs) Handles btGenerate.Click
+        Dim objeLoadData As New LoadData
         If VerificarPreenchimentoPathFile(cmbReportFrom.Text) Then
 
             If objExcelProcess Is Nothing Then objExcelProcess = New ExcelOperator
@@ -30,9 +34,13 @@ Public Class PrincipalReports
                 Case "KPMS"
                     Call objExcelProcess.openWorkBook(Me.objOpenFileDialogKPMS.FileName)
                     Call objExcelProcess.PrepareDataToReportAnalises(cmbReportFrom.Text)
+                    CollectionKPMSLines = New List(Of KPMS)
+                    CollectionKPMSLines = objeLoadData.loadKPMSObject(objExcelProcess.objWorkSheet)
                 Case "REMEDY"
                     Call objExcelProcess.openWorkBook(Me.objOpenFileDialogRemedy.FileName)
                     Call objExcelProcess.PrepareDataToReportAnalises(cmbReportFrom.Text)
+                Case Else
+                    MsgBox("Opition inactive, wait next versions")
             End Select
 
         End If

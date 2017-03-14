@@ -4,7 +4,7 @@ Public Class LoadData
 
     End Sub
 
-    Function loadKPMSObject(ByRef objSheet As Worksheet)
+    Public Function loadKPMSObject(ByRef objSheet As Worksheet)
 
         Dim ObjKPMSItem As New KPMS
         Dim CollectionKPMSItem As New List(Of KPMS)
