@@ -203,10 +203,10 @@ Partial Class PrincipalReports
         '
         'btGenerate
         '
-        Me.btGenerate.Location = New System.Drawing.Point(95, 256)
+        Me.btGenerate.Location = New System.Drawing.Point(4, 256)
         Me.btGenerate.Margin = New System.Windows.Forms.Padding(2)
         Me.btGenerate.Name = "btGenerate"
-        Me.btGenerate.Size = New System.Drawing.Size(109, 23)
+        Me.btGenerate.Size = New System.Drawing.Size(200, 23)
         Me.btGenerate.TabIndex = 7
         Me.btGenerate.Text = "Generate"
         Me.btGenerate.UseVisualStyleBackColor = True
