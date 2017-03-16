@@ -25,8 +25,6 @@ Public Class ExcelOperator
             Me.objWorkbook = Me.objWorkBooks.Open(strPathFile)
             Me.objWorkSheet = Me.objWorkbook.Sheets(1)
 
-
-
         Catch exc As Exception
             Console.WriteLine("ocorreu um erro " & exc.GetBaseException.ToString)
             Console.WriteLine("ocorreu um erro " & exc.Message)
